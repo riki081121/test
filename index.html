@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>高一六組「奪城」</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body { font-family: sans-serif; background: #f8f8ff; padding: 2em; }
+        .container { max-width: 400px; margin: auto; background: #fff; border-radius: 8px; box-shadow: 0 2px 8px #ccc; padding: 2em; }
+        h1 { font-size: 1.5em; margin-bottom: 1em; }
+        .info { font-size: 1.2em; margin-bottom: 1em; }
+        .updated { color: #555; font-size: 0.9em; }
+    </style>
+    <script>
+        function updateTime() {
+            const now = new Date();
+            const formatted = now.toLocaleString('ja-JP', { hour12: false });
+            document.getElementById('updated').textContent = '最終更新: ' + formatted;
+        }
+        window.onload = function() {
+            updateTime();
+            setInterval(function() {
+                location.reload();
+            }, 60000); // 1分ごとにリロード
+        };
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1>A405号室<br>高一六組HR参団「奪城」<br>只今の待ち時間</h1>
+        <div class="info">現在並んでいるグループ数: <strong>6グループ</strong></div>
+        <div class="info">推定待ち時間: <strong>12分</strong></div>
+        <div class="updated" id="updated"></div>
+    </div>
+</body>
+</html>
